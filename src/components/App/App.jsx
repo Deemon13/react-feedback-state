@@ -23,9 +23,6 @@ export const App = () => {
 
 	const updateFeedback = feedbackType => {
 		setFeeds({ ...feeds, [feedbackType]: feeds[feedbackType] + 1 });
-		// console.log('Updating feedback...');
-		// console.log(feedbackType);
-		// console.log(feeds);
 	};
 
 	const resetFeedback = () => {

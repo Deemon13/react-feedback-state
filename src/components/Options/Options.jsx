@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Options = ({ handleClick, total, handleReset }) => {
 	return (
 		<>
@@ -13,4 +15,10 @@ export const Options = ({ handleClick, total, handleReset }) => {
 			{total > 0 && <button onClick={handleReset}>Reset</button>}
 		</>
 	);
+};
+
+Options.propTypes = {
+	handleClick: PropTypes.func.isRequired,
+	total: PropTypes.number,
+	handleReset: PropTypes.func.isRequired,
 };
