@@ -4,10 +4,18 @@ import { Description, Feedback, Options, Notification } from '../../components';
 import styles from './App.module.css';
 
 export const App = () => {
-	const [feeds, setFeeds] = useState({
-		good: 0,
-		neutral: 0,
-		bad: 0,
+	const [feeds, setFeeds] = useState(() => {
+		const savedFeeds = window.localStorage.getItem('feeds');
+
+		if (savedFeeds !== null) {
+			return JSON.parse(savedFeeds);
+		}
+
+		return {
+			good: 0,
+			neutral: 0,
+			bad: 0,
+		};
 	});
 
 	const totalFeedback = feeds.good + feeds.bad + feeds.neutral;
