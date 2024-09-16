@@ -1,0 +1,18 @@
+.feedback {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 15px;
+}
+
+.feedback__value {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	font-weight: 600;
+}

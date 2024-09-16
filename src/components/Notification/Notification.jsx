@@ -1,7 +1,9 @@
+import styles from './Notification.module.css';
+
 export const Notification = () => {
 	return (
 		<>
-			<h2>There is no any feedbacks yet!</h2>
+			<h2 className={styles.notification}>There is no any feedback yet!</h2>
 		</>
 	);
 };

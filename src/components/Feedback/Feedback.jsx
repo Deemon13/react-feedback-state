@@ -1,20 +1,34 @@
 import PropTypes from 'prop-types';
 
-export const Feedback = ({ feeds, total, positive }) => {
-	const { good, bad, neutral } = feeds;
+import styles from './Feedback.module.css';
+
+export const Feedback = ({ feedbacks, total, positive }) => {
+	const { good, bad, neutral } = feedbacks;
 	return (
-		<>
-			<p>Good: {good}</p>
-			<p>Neutral: {neutral}</p>
-			<p>Bad: {bad}</p>
-			{total > 0 && <p>Total: {total}</p>}
-			{positive > 0 && <p>Positive: {positive}%</p>}
-		</>
+		<ul className={styles.feedback}>
+			<li className={styles.feedback__item}>
+				<p className={styles.feedback__value}>Good: {good}</p>
+			</li>
+			<li className={styles.feedback__item}>
+				<p className={styles.feedback__value}>Neutral: {neutral}</p>
+			</li>
+			<li className={styles.feedback__item}>
+				<p className={styles.feedback__value}>Bad: {bad}</p>
+			</li>
+			<li className={styles.feedback__item}>
+				{total > 0 && <p className={styles.feedback__value}>Total: {total}</p>}
+			</li>
+			<li className={styles.feedback__item}>
+				{total > 0 && (
+					<p className={styles.feedback__value}>Positive: {positive}%</p>
+				)}
+			</li>
+		</ul>
 	);
 };
 
 Feedback.propTypes = {
-	feeds: PropTypes.objectOf(PropTypes.number),
+	feedbacks: PropTypes.objectOf(PropTypes.number),
 	total: PropTypes.number,
 	positive: PropTypes.number,
 };

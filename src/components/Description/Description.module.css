@@ -1,0 +1,21 @@
+.description {
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000000;
+}
+
+.description__title {
+	margin-top: 0;
+	margin-bottom: 20px;
+
+	font-size: 30px;
+	font-weight: 900;
+}
+
+.description__text {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	font-size: 18px;
+	font-weight: 500;
+}

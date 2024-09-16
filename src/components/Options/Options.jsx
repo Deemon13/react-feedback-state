@@ -1,19 +1,54 @@
 import PropTypes from 'prop-types';
 
+import styles from './Options.module.css';
+
 export const Options = ({ handleClick, total, handleReset }) => {
 	return (
-		<>
-			<button onClick={evt => handleClick(evt.target.innerText.toLowerCase())}>
-				Good
-			</button>
-			<button onClick={evt => handleClick(evt.target.innerText.toLowerCase())}>
-				Neutral
-			</button>
-			<button onClick={evt => handleClick(evt.target.innerText.toLowerCase())}>
-				Bad
-			</button>
-			{total > 0 && <button onClick={handleReset}>Reset</button>}
-		</>
+		<section className={styles.options}>
+			<ul className={styles.options__list}>
+				<li className={styles.options__item}>
+					{' '}
+					<button
+						type="button"
+						className={styles.options__button}
+						onClick={evt => handleClick(evt.target.innerText.toLowerCase())}
+					>
+						Good
+					</button>
+				</li>
+				<li className={styles.options__item}>
+					{' '}
+					<button
+						type="button"
+						className={styles.options__button}
+						onClick={evt => handleClick(evt.target.innerText.toLowerCase())}
+					>
+						Neutral
+					</button>
+				</li>
+				<li className={styles.options__item}>
+					{' '}
+					<button
+						type="button"
+						className={styles.options__button}
+						onClick={evt => handleClick(evt.target.innerText.toLowerCase())}
+					>
+						Bad
+					</button>
+				</li>
+				<li className={styles.options__item}>
+					{total > 0 && (
+						<button
+							type="button"
+							className={styles.options__button}
+							onClick={handleReset}
+						>
+							Reset
+						</button>
+					)}
+				</li>
+			</ul>
+		</section>
 	);
 };
 
